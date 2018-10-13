@@ -78,7 +78,7 @@ def load_data_wrapper(additional_data = False):
         y = tr_d[1][0]
         x2 = np.array(ndimage.rotate(tr_d[0][0].reshape((28, 28)), -1 * randint(5,20), reshape=False)).reshape((784,))
         y2 = tr_d[1][0]
-        for i in range(1,50000): #generate 50000 images (25000 rotated right and 25000 rotated left)
+        for i in range(1,50000): #generate 100000 images (50000 rotated right and 50000 rotated left)
             x = np.vstack((x,np.array(ndimage.rotate(tr_d[0][i].reshape((28, 28)), randint(5,20), reshape=False)).reshape((784,))))
             y = np.hstack((y, tr_d[1][i]))
             x2 = np.vstack((x2,np.array(ndimage.rotate(tr_d[0][i].reshape((28, 28)), -1 * randint(5,20), reshape=False)).reshape((784,))))
